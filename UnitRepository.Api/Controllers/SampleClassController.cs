@@ -5,23 +5,27 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using UnitRepository.Core.Abstract;
+using UnitRepository.Core.Concrete;
 using UnitRepository.Domain.Concrete;
 using UnitRepository.Model.Core;
 
 namespace UnitRepository.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [RoutePrefix("api/[controller]")]
     public class SampleClassController : ApiController
     {
+        private AppDbContext _dbContext;
         private readonly IUnitOfWork<AppDbContext> Work;
 
-        public SampleClassController(IUnitOfWork<AppDbContext> work)
+        public SampleClassController()
         {
-            this.Work = work;
+            _dbContext = new AppDbContext();
+            Work = new UnitOfWork<AppDbContext>(_dbContext);
         }
 
         [HttpGet]
-        public IEnumerable<SampleClass> GetAll()
+        [Route("GetAll")]
+        public IHttpActionResult GetAll()
         {
             List<SampleClass> listAll = new List<SampleClass>();
             try
@@ -32,11 +36,11 @@ namespace UnitRepository.Api.Controllers
             {
                 // Write log here.
             }
-            return listAll;
+            return Ok(listAll);
         }
 
         [HttpGet]
-        public IEnumerable<SampleClass> Get(int id)
+        public IHttpActionResult Get(int id)
         {
             List<SampleClass> obj = new List<SampleClass>();
             try
@@ -47,11 +51,11 @@ namespace UnitRepository.Api.Controllers
             {
                 // Write log here.
             }
-            return obj;
+            return Ok(obj);
         }
 
         [HttpPost]
-        public SampleClass Insert([FromBody]SampleClass model)
+        public IHttpActionResult Insert([FromBody]SampleClass model)
         {
             try
             {
@@ -73,7 +77,7 @@ namespace UnitRepository.Api.Controllers
             {
                 // Write log here.
             }
-            return model;
+            return Ok(model);
         }
     }
 }
