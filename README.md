@@ -7,11 +7,8 @@ It make for easy to understand and develop when you coding with using those patt
  - SQL Server 2016 (recommended) or lastest
 
 # Package
- - ASP.NET Core V.2.2
- - Microsoft.EntityFrameworkCore V.2.2.1
- - Microsoft.EntityFrameworkCore.SqlServer V.2.2.1
- - Microsoft.EntityFrameworkCore.Design V.2.2.1
- - Microsoft.EntityFrameworkCore.Proxies V.2.2.1
+ - ASP.NET Framework 4.6.1
+ - Microsoft.EntityFramework 6.2.0
  
 # Branch
  - master: Source code release version. If you want to custom you can download and include project into your solution.
