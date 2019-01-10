@@ -51,6 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\AppDbContext.cs" />
+    <Compile Include="Migrations\201901101421426_InitialDatabase.cs" />
+    <Compile Include="Migrations\201901101421426_InitialDatabase.Designer.cs">
+      <DependentUpon>201901101421426_InitialDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +74,11 @@
       <Project>{0cac9aaf-7245-4ba6-9d95-ac462a35043e}</Project>
       <Name>UnitRepository.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201901101421426_InitialDatabase.resx">
+      <DependentUpon>201901101421426_InitialDatabase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
