@@ -3,6 +3,7 @@ namespace UnitRepository.Domain.Concrete
     using System;
     using System.Data.Entity;
     using System.Linq;
+    using UnitRepository.Model.Core;
 
     public class AppDbContext : DbContext
     {
@@ -20,7 +21,7 @@ namespace UnitRepository.Domain.Concrete
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
-        // public virtual DbSet<MyEntity> MyEntities { get; set; }
+        public virtual DbSet<SampleClass> SampleClasses { get; set; }
     }
 
     //public class MyEntity
