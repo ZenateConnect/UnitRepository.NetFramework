@@ -1,4 +1,4 @@
-# UnitRepository.NetFramework
+# UnitRepository for .NET Framework
 Unit Repository for .NET Framework, it combined 2 patterns are Unit of Work Pattern and Repository Pattern.
 It make for easy to understand and develop when you coding with using those patterns.
 
